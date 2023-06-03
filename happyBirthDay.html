@@ -74,7 +74,7 @@
           clearInterval(intervalId);
         }
         text.style.opacity = opacity;
-        opacity += 0.05;
+        opacity += 0.02;
       }, 100);
     }
 
@@ -87,7 +87,7 @@
           value: 50,
           density: {
             enable: true,
-            value_area: 800
+            value_area: 1000
           }
         },
         color: {
@@ -100,7 +100,7 @@
             color: '#000000'
           },
           polygon: {
-            nb_sides: 5
+            nb_sides: 10
           },
         },
         size: {
@@ -125,7 +125,7 @@
         },
         line_linked: {
           enable: false,
-          distance: 500,
+          distance: 50000,
           color: '#ffffff',
           opacity: 0.4,
           width: 2
