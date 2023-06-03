@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Joyeux anniversaire CHUCHU</title>
+  <title>Joyeux anniversaire</title>
   <style>
     body {
       background-color: #3498db;
@@ -19,7 +19,7 @@
       display: none;
     }
      #appp {
-      text-align: bottom;
+
       animation: heartbeat 3.5s infinite;
 
     }
@@ -47,7 +47,7 @@
 }
 
 #playButton:hover {
-  background-color: #fff; /* Couleur de fond au survol */
+  background-color: #eebbff; /* Couleur de fond au survol */
 }
 
 
@@ -75,7 +75,9 @@
   <div id="app">
     <h1>Je t'aime</h1>
     <h2>Joyeux anniversaire</h2>
-    <h1 style="color:#FF0000;">ChuChu</h1>
+    <h1 style="color:#FF000;">ChuChu</h1>
+    <h3 style="color:#fff;">teb9AY daymen Hayla kul 3am</h3>
+    <h3 style="color:#fff;">Ya L Hayla</h3>
 
   </div>
    <div2 id="appp">
@@ -106,11 +108,11 @@
           clearInterval(intervalId);
         }
         text.style.opacity = opacity;
-        opacity += 0.01;
+        opacity += 0.006;
       }, 100);
     }
 
-    fadeInText();
+   
 
     // Configuration de particles.js
     particlesJS('particles-js', {
@@ -226,14 +228,15 @@ const appDiv = document.querySelector('div');
 playButton.addEventListener('click', () => {
   appDiv.style.display = 'block';
     playButton.style.display = 'none';
+     fadeInText();
 });
     playButton.addEventListener('click', () => {
       if (audioPlayer.paused) {
         audioPlayer.play();
-        playButton.textContent = 'Touch Me';
+        playButton.textContent = 'Pause';
       } else {
         audioPlayer.pause();
-        playButton.textContent = 'Touch Me ';
+        playButton.textContent = 'Lancer la musique';
       }
       
     });
