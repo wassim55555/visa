@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>Joyeux anniversaire</title>
-  
   <style>
     body {
       background-color: #3498db;
@@ -13,30 +12,43 @@
       height: 100vh;
       margin: 0;
     }
-<audio>
-    <source src="Eva - Anniversaire (Audio Officiel).mp3" type="audio/mpeg">
-    
-  </audio>
 
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     #app {
       text-align: center;
       animation: heartbeat 3.5s infinite;
     }
-  
 
     h1 {
       font-size: 100px;
       color: #fff;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     }
-     h2 {
+    
+    h2 {
       font-size: 85px;
-      color:#eebbff;
+      color: #eebbff;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     }
-    
-    
+    #playButton {
+  background-color: #3492; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  border: none; /* Supprimer la bordure */
+  padding: 12px 24px; /* Espacement interne */
+  font-size: 20px; /* Taille de police */
+  border-radius: 4px; /* Bordure arrondie */
+  cursor: pointer; /* Curseur au survol */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre */
+}
+
+#playButton:hover {
+  background-color: #fff; /* Couleur de fond au survol */
+}
+
+#playButton:active {
+  background-color: #fff; /* Couleur de fond en cliquant */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Ombre en cliquant */
+}
+
     #particles-js {
       position: absolute;
       width: 100%;
@@ -57,16 +69,21 @@
     }
   </style>
 </head>
-
 <body>
   <div id="app">
     <h1>Je t'aime</h1>
     <h2>Joyeux anniversaire</h2>
     <h1>ChuChu</h1>
+    <button id="playButton">Lancer la musique</button>
   </div>
-  <button id="playButton">Lire la musique</button>
 
   <div id="particles-js"></div>
+
+  <audio id="audioPlayer">
+    <source src="Eva - Anniversaire (Audio Officiel).mp3" type="audio/mpeg">
+  </audio>
+
+  
 
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
@@ -75,14 +92,6 @@
     // Exemple d'animation d'apparition progressive du texte
     const text = document.querySelector('h1');
     text.style.opacity = 0;
-// Récupérez le bouton de lecture et le fichier audio
-const playButton = document.getElementById('playButton');
-const audio = document.querySelector('audio');
-
-// Ajoutez l'écouteur d'événement pour le clic sur le bouton de lecture
-playButton.addEventListener('click', () => {
-  audio.play();
-});
 
     function fadeInText() {
       let opacity = 0;
@@ -202,6 +211,20 @@ playButton.addEventListener('click', () => {
       },
       retina_detect: true
     });
+
+    const playButton = document.getElementById('playButton');
+    const audioPlayer = document.getElementById('audioPlayer');
+
+    playButton.addEventListener('click', () => {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        playButton.textContent = 'Pause';
+      } else {
+        audioPlayer.pause();
+        playButton.textContent = 'Lancer la musique';
+      }
+    });
   </script>
+
 </body>
 </html>
