@@ -56,7 +56,15 @@
     
   </audio>
 
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js">
+  const playButton = document.getElementById('playButton');
+const audio = document.querySelector('audio');
+
+// Ajoutez l'écouteur d'événement pour le clic sur le bouton de lecture
+playButton.addEventListener('click', () => {
+  audio.play();
+});
+  </script>
 <body>
   <div id="app">
     <h1>Je t'aime</h1>
@@ -193,5 +201,7 @@
       retina_detect: true
     });
   </script>
+  <button id="playButton">Lire la musique</button>
+
 </body>
 </html>
